@@ -4,8 +4,12 @@ import "./signUp.css"
 function SignUp() {
   return (
     <div className='signup'>
-        This is SignUp
-      
+        <img src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png" alt="" />
+        
+        <input type="username" placeholder='username' />
+        <input type="email" placeholder='Email' />
+        <input type="password" placeholder='Password' />
+        <button>Sign Up</button>
     </div>
   )
 }

@@ -1,18 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./Authentication.css"
 import Login from './Login'
+import SignUp from './SignUp'
 function Authentication() {
+  const [active, setActive] = useState("login");
+
+  const handleChange = () => {
+    setActive(active === "login" ? "signup" : "login");
+  };
   return (
     <div className='authentication'>
       <div className="auth__left">
         <img src="https://i.ibb.co/ky65cGR/mobile.png" alt="" />
       </div>
       <div className="auth__right">
-        <Login/>
+        {active === "login" ? <Login/> : <SignUp/> }
+
+        <div className="auth__more">
+        <span>
+        {active === "login" ? (
+        <>Don't have an account? {" "}
+        <button onClick={handleChange}>Sign Up</button></>) : (
+        <>Have an account? 
+        <button onClick={handleChange}>Login</button></>)}
+          </span>
       </div>
-      <div className="auth__more">
-        <span>Don't have an account? <button>Sign Up</button></span>
       </div>
+      
     </div>
   )
 }
