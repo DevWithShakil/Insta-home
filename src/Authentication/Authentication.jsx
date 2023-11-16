@@ -22,7 +22,7 @@ function Authentication() {
         <>Don't have an account? {" "}
         <button onClick={handleChange}>Sign Up</button></>) : (
         <>Have an account? 
-        <button onClick={handleChange}>Login</button></>)}
+        <button onClick={handleChange}>Log in</button></>)}
           </span>
       </div>
       </div>
