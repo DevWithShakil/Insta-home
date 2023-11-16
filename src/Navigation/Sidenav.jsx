@@ -69,7 +69,7 @@ const handleLogout = () => {
         </button>
        
         <button className="sidenav__button">
-        <Avatar>A</Avatar>
+        <Avatar>{user.username ? user.username.charAt(0).toUpperCase() : "A"}</Avatar>
           <span>{user.username}
           <button onClick={handleLogout} className='logout__button'>Log Out</button>
           </span>

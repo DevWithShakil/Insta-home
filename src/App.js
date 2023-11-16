@@ -29,9 +29,15 @@ function App() {
 
   const user = useSelector((state) => state.data.user.user);
 
+  const isLoading = useSelector((state) => state.data.user.isLoading);
+
+  console.log(auth.currentUser);
   return (
     <div className="app">
-      {user ? <Homepage /> : <Authentication />}
+
+      {isLoading ? ( <div className="loader-container">
+      <div className="loader"></div>
+    </div>) :  (<>{user ? <Homepage /> : <Authentication />}</>)}
     </div>
   );
 }
