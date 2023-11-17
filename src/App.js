@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import Authentication from './Authentication/Authentication';
 import Homepage from './Homepage';
+import Authentication from './Authentication/Authentication'
 import { useEffect } from 'react';
 import { auth } from "./firebase";
 import { loginUser, setLoading } from './features/userSlice';
@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => { // Use => instead of =
+    auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         dispatch(
           loginUser({
@@ -25,16 +25,13 @@ function App() {
         console.log("User is not logged in");
       }
     });
-  }, []);
+  }, [dispatch]);
 
-  const user = useSelector((state) => state.data.user.user);
+  const user = useSelector((state) => state.data?.user?.user);
 
-  const isLoading = useSelector((state) => state.data.user.isLoading);
-
-  console.log(auth.currentUser);
+  const isLoading = useSelector((state) => state.data?.user?.isLoading);
   return (
     <div className="app">
-
       {isLoading ? ( <div className="loader-container">
       <div className="loader"></div>
     </div>) :  (<>{user ? <Homepage /> : <Authentication />}</>)}

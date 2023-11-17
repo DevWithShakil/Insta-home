@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit"
 
 const initialState = {
     user: null,
-    isLoading: true
+    isLoading: true,
 }
 
 export const userSlice = createSlice ({
@@ -24,3 +24,4 @@ export const userSlice = createSlice ({
 })
 
 export const {loginUser,logoutUser, setLoading} = userSlice.actions;
+

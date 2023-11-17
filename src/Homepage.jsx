@@ -12,6 +12,8 @@ function Homepage() {
       <div className="homepage__timeline">
         <Timeline />
       </div>
+      <div>
+        </div>
     </div>
   );
 }
